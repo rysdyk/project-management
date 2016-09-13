@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   root "checklists#index"
 
-  resources :checklists
-
-  resources :items
+  resources :checklists do
+    resources :items do
+      member do
+        patch :complete
+      end
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

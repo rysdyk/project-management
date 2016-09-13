@@ -10,5 +10,11 @@
   <%= @checklist.description %>
 </p>
 
+<% @checklist.items.each do |item| %>
+  <%= item %>
+<% end %>
+
+<%= render "items/form" %>
+
 <%= link_to 'Edit', edit_checklist_path(@checklist) %> |
 <%= link_to 'Back', checklists_path %>

@@ -1,15 +1,15 @@
-<%= form_for(@item) do |f| %>
-  <% if @item.errors.any? %>
+<%= form_for([@checklist, @checklist.items.build]) do |f| %>
+  <%# if @checklist.items.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <h2><%# pluralize(@checklist.items.errors.count, "error") %> prohibited this item from being saved:</h2>
 
       <ul>
-      <% @item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      <%# @checklist.items.errors.full_messages.each do |message| %>
+        <li><%# message %></li>
+      <%# end %>
       </ul>
     </div>
-  <% end %>
+  <%# end %>
 
   <div class="field">
     <%= f.label :title %><br>
