@@ -10,9 +10,12 @@
   <%= @checklist.description %>
 </p>
 
-<% @checklist.items.each do |item| %>
-  <%= item %>
-<% end %>
+<ul>
+  <% @checklist.items.each do |item| %>
+    <li><%= item.title %> | <%= item.description %></li>
+  <% end %>
+</ul>
+
 
 <%= render "items/form" %>
 
