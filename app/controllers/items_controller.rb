@@ -22,10 +22,11 @@ class ItemsController < ApplicationController
 
   # POST /items
   def create
-    @item = Item.new(item_params)
+    #byebug
+    @item = @checklist.items.new(item_params)
 
     if @item.save
-      redirect_to @item, notice: 'Item was successfully created.'
+      redirect_to @checklist, notice: 'Item was successfully created.'
     else
       render :new
     end
