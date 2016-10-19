@@ -1,0 +1,6 @@
+<h1>All Tasks</h1>
+
+<% @tasks.each do |t| %>
+  <%= link_to(t.name, task_path(t)) %>
+  <%# content_tag(:p, t.description) %>
+<% end %>

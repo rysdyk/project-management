@@ -1,0 +1,7 @@
+<h1>Task <%= @task.name %></h1>
+
+<ul>
+  <% @task.checklist.items.each do |i| %>
+    <%= content_tag(:li, i.title) %>
+  <% end %>
+</ul>
