@@ -1,0 +1,16 @@
+<%= form_for @task do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :due_date %>
+  <%= f.date_field :due_date %>
+
+  <%= f.label :checklist_id %>
+  <%= f.select(:checklist_id) do %>
+    <%= @checklists.each do |c| %>
+      <%= content_tag(:option, c.title, value: c.id) %>
+    <% end %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

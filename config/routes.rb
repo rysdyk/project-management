@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "checklists#index"
+  root "tasks#index"
 
   resources :checklists do
     resources :items do
@@ -9,9 +9,11 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/tasks', to: "tasks#index"
+  resources :tasks
 
-  get '/tasks/:id', to: "tasks#show", as: :task
+  #get '/tasks', to: "tasks#index"
+
+  #get '/tasks/:id', to: "tasks#show", as: :task
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

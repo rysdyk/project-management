@@ -1,6 +1,11 @@
 <h1>All Tasks</h1>
 
-<% @tasks.each do |t| %>
-  <%= link_to(t.name, task_path(t)) %>
-  <%# content_tag(:p, t.description) %>
-<% end %>
+<ul>
+  <% @tasks.each do |t| %>
+    <li><%= link_to(t.name, task_path(t)) %>, Due: <%= t.due_date.strftime("%B %d, %Y") %></li>
+    <%# content_tag(:p, t.description) %>
+  <% end %>
+</ul>
+
+
+<%= content_tag(:p, link_to("Create New Task", new_task_path)) %>

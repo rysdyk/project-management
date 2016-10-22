@@ -1,7 +1,18 @@
 <h1>Task <%= @task.name %></h1>
 
+<p>Due Date: <%= @task.due_date.strftime("%B %d, %Y") %></p>
+
+<h3><%= @task.checklist.title %></h3>
 <ul>
   <% @task.checklist.items.each do |i| %>
     <%= content_tag(:li, i.title) %>
   <% end %>
+</ul>
+
+<hr />
+
+<ul>
+  <li><%= link_to("Edit Task", edit_task_path(@task)) %></li>
+  <li><%= link_to("View All Tasks", tasks_path) %></li>
+  <li><%# link_to("Delete Task", delete_task_path(@task)) %></li>
 </ul>
